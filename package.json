@@ -2,6 +2,15 @@
   "name": "liveLedger",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:arbitrum-sepolia": "hardhat run scripts/deploy-arbitrum-sepolia.ts --network arbitrumSepolia",
+    "deploy:production": "hardhat run scripts/deploy-production.ts --network arbitrumOne",
+    "verify:arbitrum-sepolia": "hardhat verify --network arbitrumSepolia",
+    "demo": "hardhat run scripts/demo.ts --network hardhatOp",
+    "node": "hardhat node"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^3.0.3",
     "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
@@ -14,6 +23,7 @@
     "viem": "^2.38.5"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.4.0"
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^17.2.3"
   }
 }
