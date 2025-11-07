@@ -47,12 +47,28 @@ const config: HardhatUserConfig = {
       accounts: [configVariable("ARBITRUM_PRIVATE_KEY")],
       chainId: 421614,
     },
+    // Mainnet Networks
+    mainnet: {
+      type: "http",
+      chainType: "l1",
+      url: configVariable("ETHEREUM_MAINNET_RPC_URL"),
+      accounts: [configVariable("MAINNET_PRIVATE_KEY")],
+      chainId: 1,
+      gasPrice: "auto",
+    },
     arbitrumOne: {
       type: "http",
       chainType: "op",
       url: configVariable("ARBITRUM_ONE_RPC_URL"),
-      accounts: [configVariable("ARBITRUM_PRIVATE_KEY")],
+      accounts: [configVariable("MAINNET_PRIVATE_KEY")],
       chainId: 42161,
+    },
+    polygon: {
+      type: "http",
+      chainType: "l1", 
+      url: configVariable("POLYGON_RPC_URL"),
+      accounts: [configVariable("MAINNET_PRIVATE_KEY")],
+      chainId: 137,
     },
   },
 };
